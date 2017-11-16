@@ -1,0 +1,26 @@
+{
+  "name": "helcode-meteor-bolireplate",
+  "private": true,
+  "scripts": {
+    "start": "meteor run"
+  },
+  "dependencies": {
+    "babel-runtime": "6.18.0",
+    "meteor-node-stubs": "~0.2.0",
+    "moment": "^2.17.1",
+    "prop-types": "^15.6.0",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
+    "react-router": "^3.0.0",
+    "simpl-schema": "0.0.3"
+  },
+  "devDependencies": {
+    "eslint": "^4.10.0",
+    "eslint-config-google": "^0.9.1",
+    "eslint-plugin-meteor": "^4.1.4",
+    "eslint-plugin-react": "^7.4.0"
+  },
+  "engines": {
+    "node": "8.8.1"
+  }
+}
