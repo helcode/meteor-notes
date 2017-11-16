@@ -1,3 +1,3 @@
-# HELCODE boilerplate Meteor project
+# HELCODE meteor boilerplate
 
-This boilerplate includes a basic meteor/react and auth setup.
+This boilerplate for a basic meteor/react w/ auth setup application.
