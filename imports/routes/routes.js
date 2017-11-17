@@ -1,6 +1,6 @@
-import { Meteor } from 'meteor/meteor';
+import {Meteor} from 'meteor/meteor';
 import React from 'react';
-import { Router, Route, browserHistory } from 'react-router';
+import {Router, Route, browserHistory} from 'react-router';
 
 import Login from './../ui/Login';
 import Signup from './../ui/Signup';
@@ -9,31 +9,32 @@ import NotFound from './../ui/NotFound';
 
 window.browserHistory = browserHistory;
 
-const unauthenticatedPages = [ '/', '/signup' ];
-const authenticatedPages = [ '/dashboard' ];
+const unauthenticatedPages = ['/', '/signup'];
+const authenticatedPages = ['/dashboard'];
 const onEnterPublicPage = () => {
-  if ( Meteor.userId() ) {
-    browserHistory.replace( '/dashboard' );
+  if (Meteor.userId()) {
+    browserHistory.replace('/dashboard');
   }
 };
 
 const onEnterPrivatePage = () => {
-  if ( !Meteor.userId() ) {
-    browserHistory.replace( '/' );
+  if (!Meteor.userId()) {
+    browserHistory.replace('/');
   }
 };
 
-export const onAuthChange = ( isAuthenticated ) => {
-  const pathname = browserHistory.getCurrentLocation().pathname;
-  const isUnauthenticatedPage = unauthenticatedPages.includes( pathname );
-  const isAuthenticatedPage = authenticatedPages.includes( pathname );
+export const onAuthChange = (isAuthenticated) => {
+  const pathname = browserHistory
+    .getCurrentLocation()
+    .pathname;
+  const isUnauthenticatedPage = unauthenticatedPages.includes(pathname);
+  const isAuthenticatedPage = authenticatedPages.includes(pathname);
 
-  if ( isAuthenticated && isUnauthenticatedPage ) {
-    browserHistory.replace( '/dashboard' );
-  } else if ( !isAuthenticated && isAuthenticatedPage ) {
-    browserHistory.replace( '/' );
+  if (isAuthenticated && isUnauthenticatedPage) {
+    browserHistory.replace('/dashboard');
+  } else if (!isAuthenticated && isAuthenticatedPage) {
+    browserHistory.replace('/');
   }
-
 };
 
 export const routes = (
