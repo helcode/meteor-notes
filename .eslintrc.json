@@ -2,9 +2,16 @@
     "env": {
         "browser": true,
         "commonjs": true,
-        "es6": true
+        "es6": true, 
+        "jasmine": true
     },
-    "extends": ["eslint:recommended", "plugin:react/recommended", "plugin:meteor/recommended", "plugin:es-beautifier/standard"],
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:meteor/recommended",
+        "plugin:jasmine/recommended"
+        //"plugin:node/recommended"
+    ],
     "parserOptions": {
         "ecmaFeatures": {
             "experimentalObjectRestSpread": true,
@@ -13,8 +20,14 @@
         "sourceType": "module"
     },
     "plugins": [
-        "react", 
-        "meteor"
+        "react",
+        "meteor",
+        "mocha",
+        "jasmine",
+        "node",
+        "html",
+        "chai-expect",
+        "dependencies"
     ],
     "rules": {
         "indent": [
@@ -32,6 +45,30 @@
         "semi": [
             "error",
             "always"
-        ]
+        ],
+        //mocha specific rules
+        "mocha/no-exclusive-tests": "error",
+        //node specific rules
+        "node/exports-style": [
+            "error",
+            "module.exports"
+        ],
+        //chai-expect rules
+        "chai-expect/missing-assertion": 2,
+        "chai-expect/terminating-properties": 1,
+        //dependencies plugin rules
+        "dependencies/case-sensitive": 1,
+        "dependencies/no-cycles": 1,
+        "dependencies/no-unresolved": [
+            1,
+            {
+                "ignore": [
+                    "meteor/meteor",
+                    "meteor/mongo", 
+                    "meteor/react-meteor-data"
+                ]
+            }
+        ],
+        "dependencies/require-json-ext": 1
     }
 }

@@ -1,6 +1,6 @@
-import {Meteor} from 'meteor/meteor';
+import { Meteor } from 'meteor/meteor';
 import React from 'react';
-import {Router, Route, browserHistory} from 'react-router';
+import { Router, Route, browserHistory } from 'react-router';
 
 import Login from './../ui/Login';
 import Signup from './../ui/Signup';
@@ -39,9 +39,9 @@ export const onAuthChange = (isAuthenticated) => {
 
 export const routes = (
   <Router history={browserHistory}>
-    <Route path="/" component={Login} onEnter={onEnterPublicPage}/>
-    <Route path="/signup" component={Signup} onEnter={onEnterPublicPage}/>
-    <Route path="/dashboard" component={Dashboard} onEnter={onEnterPrivatePage}/>
-    <Route path="*" component={NotFound} onEnter={onEnterPublicPage}/>
+    <Route path="/" component={Login} onEnter={onEnterPublicPage} />
+    <Route path="/signup" component={Signup} onEnter={onEnterPublicPage} />
+    <Route path="/dashboard" component={Dashboard} onEnter={onEnterPrivatePage} />
+    <Route path="*" component={NotFound} onEnter={onEnterPublicPage} />
   </Router>
 );

@@ -1,6 +1,6 @@
-import {Meteor} from 'meteor/meteor';
+import { Meteor } from 'meteor/meteor';
 import expect from 'expect';
-import {validateNewUser} from './users';
+import { validateNewUser } from './users';
 
 if (Meteor.isServer) {
   describe('users', () => {
@@ -18,12 +18,22 @@ if (Meteor.isServer) {
 
     it('should reject an invalid email address', () => {
       expect(() => {
-
-      });
+        const testUser = {
+          emails: [
+            {
+              address: 'testexample.com'
+            }
+          ]
+        };
+        validateNewUser(testUser);
+      }).toThrow();
     });
   });
 }
 
-// const add = ( a, b ) => a + b; describe('Math', () => {   it('should add two
-// numbers', () => {     const res = add(11, 9);     expect(res).toBe(21); });
+// const add = ( a, b ) => a + b; 
+// describe('Math', () => {   
+// it('should add two numbers', () => { 
+//    const res = add(11, 9);     
+//    expect(res).toBe(21); });
 // });

@@ -1,6 +1,6 @@
-import {Meteor} from 'meteor/meteor';
+import { Meteor } from 'meteor/meteor';
 import SimpleSchemea from 'simpl-schema';
-import {Accounts} from 'meteor/accounts-base';
+import { Accounts } from 'meteor/accounts-base';
 
 export const validateNewUser = (user) => {
   const email = user.emails[0].address;
@@ -9,7 +9,7 @@ export const validateNewUser = (user) => {
       type: String,
       regEx: SimpleSchemea.RegEx.Email
     }
-  }).validate({email: email}); // we can use ES6 property short hand and replace {email:email} with {email}
+  }).validate({ email: email }); // we can use ES6 property short hand and replace {email:email} with {email}
 
   return true;
 };
