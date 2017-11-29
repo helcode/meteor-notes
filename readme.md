@@ -1,3 +1,3 @@
-# HELCODE meteor boilerplate
+# Notes App (with React/Meteor)
 
-This boilerplate for a basic meteor/react w/ auth setup application.
+This is a basic Notes app using meteor/react w/ auth setup.
