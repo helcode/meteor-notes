@@ -26,6 +26,9 @@ const onEnterPrivatePage = () => {
 };
 
 const onEnterNotePage = (nextState) => {
+  //* nextState is a property in Meteor that you can use to inquiry information about loaded page.
+  //* use console.log(nextState) to know what is inside
+  
   if (!Meteor.userId()) {
     browserHistory.replace('/');
   } else {
