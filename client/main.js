@@ -2,6 +2,8 @@ import { Meteor } from 'meteor/meteor';
 import ReactDOM from 'react-dom';
 import { Tracker } from 'meteor/tracker';
 import { Session } from 'meteor/session';
+import { browserHistory } from 'react-router';
+
 
 import { routes, onAuthChange } from '../imports/routes/routes';
 import '../imports/startup/simple-schema-configuration.js';
@@ -12,7 +14,20 @@ Tracker.autorun(() => {
   onAuthChange(isAuthenticated);
 });
 
+Tracker.autorun(() => {
+  const selectedNoteId = Session.get('selectedNoteId');
+  
+  if (selectedNoteId) {
+    browserHistory.replace(`/dashboard/${selectedNoteId}`);
+
+  }
+});
 
 Meteor.startup(() => {
+  
+  // * Session.set takes two values (name & value), we are setting the value as undefined.
+  // ! Use of Session variables live in a global namespace is bad practice. reactive-dict should be used instead.
+  Session.set('selectedNoteId', undefined);
+
   ReactDOM.render(routes, document.getElementById('app'));
 });

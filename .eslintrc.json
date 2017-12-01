@@ -48,14 +48,17 @@
         ],
         //mocha specific rules
         "mocha/no-exclusive-tests": "error",
+        
         //node specific rules
         "node/exports-style": [
             "error",
             "module.exports"
         ],
+        
         //chai-expect rules
         "chai-expect/missing-assertion": 2,
         "chai-expect/terminating-properties": 1,
+        
         //dependencies plugin rules
         "dependencies/case-sensitive": 1,
         "dependencies/no-cycles": 1,
@@ -65,6 +68,9 @@
                 "ignore": [
                     "meteor/meteor",
                     "meteor/mongo", 
+                    "meteor/session",
+                    "meteor/tracker",
+                    "meteor/session",
                     "meteor/react-meteor-data"
                 ]
             }

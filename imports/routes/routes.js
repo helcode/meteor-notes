@@ -2,12 +2,13 @@ import { Meteor } from 'meteor/meteor';
 import React from 'react';
 import { Router, Route, browserHistory } from 'react-router';
 
-import Login from './../ui/Login';
-import Signup from './../ui/Signup';
-import Dashboard from './../ui/Dashboard';
-import NotFound from './../ui/NotFound';
+import Signup from '../ui/Signup';
+import Dashboard from '../ui/Dashboard';
+import NotFound from '../ui/NotFound';
+import Login from '../ui/Login';
 
-window.browserHistory = browserHistory;
+//? Check below line as it doesn't exist in Andrew's version!
+//window.browserHistory = browserHistory;
 
 const unauthenticatedPages = ['/', '/signup'];
 const authenticatedPages = ['/dashboard'];
@@ -30,18 +31,21 @@ export const onAuthChange = (isAuthenticated) => {
   const isUnauthenticatedPage = unauthenticatedPages.includes(pathname);
   const isAuthenticatedPage = authenticatedPages.includes(pathname);
 
-  if (isAuthenticated && isUnauthenticatedPage) {
+  if (isUnauthenticatedPage && isAuthenticated) {
     browserHistory.replace('/dashboard');
-  } else if (!isAuthenticated && isAuthenticatedPage) {
+  } else if (isAuthenticatedPage && !isAuthenticated) {
     browserHistory.replace('/');
   }
 };
 
 export const routes = (
   <Router history={browserHistory}>
-    <Route path="/" component={Login} onEnter={onEnterPublicPage} />
-    <Route path="/signup" component={Signup} onEnter={onEnterPublicPage} />
-    <Route path="/dashboard" component={Dashboard} onEnter={onEnterPrivatePage} />
-    <Route path="*" component={NotFound} onEnter={onEnterPublicPage} />
+    <Route path="/" component={Login} onEnter={onEnterPublicPage}/>
+    <Route path="/signup" component={Signup} onEnter={onEnterPublicPage}/>
+    <Route path="/dashboard" component={Dashboard} onEnter={onEnterPrivatePage}/>
+    <Route path="/dashboard/:id" component={Dashboard} onEnter={onEnterPrivatePage} />
+    <Route path="*" component={NotFound}/>
   </Router>
 );
+
+//* Use of /:id will allow us to fetch ID from variable id

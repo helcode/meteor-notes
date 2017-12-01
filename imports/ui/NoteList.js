@@ -5,8 +5,8 @@ import { Meteor } from 'meteor/meteor';
 import { Notes } from '../api/notes';
 
 import { withTracker } from 'meteor/react-meteor-data';
-//! withTracker replaces createContainer was deprecated in react-meteor-data@0.2.13. Use withTracker instead.
-//! https://github.com/meteor/react-packages/tree/devel/packages/react-meteor-data#usage
+//* withTracker replaces createContainer was deprecated in react-meteor-data@0.2.13. Use withTracker instead.
+//* https://github.com/meteor/react-packages/tree/devel/packages/react-meteor-data#usage
 
 import NoteListHeader from './NoteListHeader';
 import NoteListItem from './NoteListItem';
