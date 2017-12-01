@@ -8,22 +8,7 @@ import Adapter from 'enzyme-adapter-react-15';
 configure({ adapter: new Adapter() });
 
 import { NoteList } from './NoteList';
-
-const testNotes = [
-  {
-    _id: 'noteId1',
-    title: 'Test title',
-    body: '',
-    updatedAt: 0,
-    userId: 'userId1'
-  },{
-    _id: 'noteId2',
-    title: 'Test title 2',
-    body: '',
-    updatedAt: 0,
-    userId: 'userId2'
-  }
-];
+import { testNotes } from '../fixtures/fixtures';
 
 if (Meteor.isClient) {
   describe('NoteList', () => {
@@ -41,4 +26,4 @@ if (Meteor.isClient) {
       expect(wrapper.find('NoteListEmptyItem').length).toBe(1);
     });
   });
-};
+}
