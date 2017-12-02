@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 
 import { Accounts } from 'meteor/accounts-base';
 import {createContainer} from 'meteor/react-meteor-data';
@@ -20,8 +20,8 @@ export const PrivateHeader = props => (
 );
 
 PrivateHeader.propTypes = {
-  title: PropTypes.string.isRequired,
-  handleLogout: PropTypes.func.isRequired
+  title: propTypes.string.isRequired,
+  handleLogout: propTypes.func.isRequired
 };
 
 // Above is a presentational component that don't know anything but handling props without knowing anything else.

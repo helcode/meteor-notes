@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 
 import { Link } from 'react-router';
 import { Meteor } from 'meteor/meteor';
@@ -54,7 +54,7 @@ export class Login extends React.Component {
 }
 
 Login.propTypes = {
-  loginWithPassword: PropTypes.func.isRequired
+  loginWithPassword: propTypes.func.isRequired
 };
 
 export default createContainer(() => {

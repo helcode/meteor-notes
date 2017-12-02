@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 
 import { Meteor } from 'meteor/meteor';
 import { Notes } from '../api/notes';
@@ -29,8 +29,8 @@ export const NoteList = (props) => {
 };
 
 
-NoteList.PropTypes = {
-  notes: PropTypes.array.isRequired
+NoteList.propTypes = {
+  notes: propTypes.array.isRequired
 };
 
 export default withTracker(props => {

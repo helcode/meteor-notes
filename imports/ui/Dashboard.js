@@ -1,10 +1,11 @@
 import React from 'react';
 
-//import PropTypes from 'prop-types';
+//import propTypes from 'prop-types';
 //import { Accounts } from 'meteor/accounts-base';
 
 import PrivateHeader from './PrivateHeader';
 import NoteList from './NoteList';
+import Editor from './editor';
 
 
 export default function Dashboard() {
@@ -13,6 +14,7 @@ export default function Dashboard() {
       <PrivateHeader title="Dashboard" />
       <div className="page-content">
         <NoteList />
+        <Editor />
       </div>
     </div>
   );

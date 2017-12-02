@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 
 import { Meteor } from 'meteor/meteor';
 
@@ -15,7 +15,7 @@ export const NoteListHeader = (props) => {
 
 
 NoteListHeader.propTypes = {
-  meteorCall: PropTypes.func.isRequired
+  meteorCall: propTypes.func.isRequired
 };
 
 export default withTracker(props => {

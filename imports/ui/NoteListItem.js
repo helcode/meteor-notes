@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 
 import { withTracker } from 'meteor/react-meteor-data';
 
@@ -17,8 +17,8 @@ export const NoteListItem = (props) => {
 };
 
 NoteListItem.propTypes = {
-  note: PropTypes.object.isRequired,
-  Session: PropTypes.object.isRequired
+  note: propTypes.object.isRequired,
+  Session: propTypes.object.isRequired
 };
 
 export default withTracker(props => {
