@@ -5,7 +5,7 @@ import React from 'react';
 
 import PrivateHeader from './PrivateHeader';
 import NoteList from './NoteList';
-import Editor from './editor';
+import Editor from './Editor';
 
 
 export default function Dashboard() {
