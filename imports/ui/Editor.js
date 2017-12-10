@@ -8,7 +8,7 @@ import { Session } from 'meteor/session';
 import { Meteor } from 'meteor/meteor';
 import { browserHistory } from 'react-router';
 
-//New Editor.js file
+//New Editor.js file again
 
 export class Editor extends React.Component {
   constructor(props) {
