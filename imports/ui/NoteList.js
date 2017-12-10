@@ -36,13 +36,20 @@ NoteList.propTypes = {
 export default withTracker(props => {
   const selectedNoteId = Session.get('selectedNoteId');
 
+  //? WHy the following line is wrong?
+  //? notes: Notes.find({ $query: {}, $orderby:{updatedAt:1} }).fetch().map((anyNote) => {...}) 
+
   Meteor.subscribe('notes');
   return {
-    notes: Notes.find().fetch().map((anyNote) => {
-      return {
-        ...anyNote,
-        selected: anyNote._id === selectedNoteId
-      };
+    notes: Notes.find({}, {
+      sort: { updatedAt: -1 }
     })
+      .fetch().map((anyNote) => {
+        return {
+          ...anyNote,
+          selected: anyNote._id === selectedNoteId
+        };
+      })
   };
 })(NoteList);
+
