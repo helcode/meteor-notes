@@ -22,7 +22,7 @@ export const NoteListHeader = (props) => {
          * we will need to pass arguments into call back function as below
          *! props.meteorCall('notes.insert', (err, res) => {});
          * where err: is error 
-         * & res: is the response from Notes.insert function in Monogodb which should be the new note Id
+         * & res: is the response from Notes.insert function in Mongodb which should be the new note Id
          * hence, we should set the new selectedNoteId value as below
          *! props.Session.set('selectedNoteId', res);
         **/ 
