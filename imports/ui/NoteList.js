@@ -21,8 +21,6 @@ export const NoteList = (props) => {
       {props.notes.map((oneNote) => {
         return (<NoteListItem key={oneNote._id} note={oneNote} />);
       })}
-
-      NoteList {props.notes.length}
     </div>
   );
 };
