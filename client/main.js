@@ -18,11 +18,18 @@ Tracker.autorun(() => {
 
 Tracker.autorun(() => {
   const selectedNoteId = Session.get('selectedNoteId');
-  
+  Session.set('isNavOpen', false);
   if (selectedNoteId) {
     browserHistory.replace(`/dashboard/${selectedNoteId}`);
-
+    
   }
+  
+});
+
+Tracker.autorun(() => {
+  const isNavOpen = Session.get('isNavOpen');
+
+  document.body.classList.toggle('is-nav-open', isNavOpen);
 });
 
 Meteor.startup(() => {
@@ -30,6 +37,7 @@ Meteor.startup(() => {
   // * Session.set takes two values (name & value), we are setting the value as undefined.
   // ! Use of Session variables live in a global namespace is bad practice. reactive-dict should be used instead.
   Session.set('selectedNoteId', undefined);
+  Session.set('isNavOpen', false);
 
   ReactDOM.render(routes, document.getElementById('app'));
 });
